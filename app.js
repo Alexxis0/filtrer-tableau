@@ -51,44 +51,38 @@ let table = [
 // create element html
 function createTable(tableau) {
     for (let i = 0; i < tableau.length; i++) {
-    const nouvelleLigne = document.createElement("tr");
-    nouvelleLigne.innerHTML = `<td>${tableau[i].values}</td>`;
-    document.querySelector("table").appendChild(nouvelleLigne);
+        const nouvelleLigne = document.createElement("tr");
+        nouvelleLigne.innerHTML = `<td>${tableau[i].values}</td>`;
+        document.querySelector("table").appendChild(nouvelleLigne);
     }
 }
-createTable(table)
-
+createTable(table);
 
 // filter
 let filterAnimaux = table.filter((item) => {
     return item.catégorie == "animaux";
 });
 
-
-
 let filterLangage = table.filter((item) => {
     return item.catégorie == "langage";
 });
-
-
 
 let filterNourriture = table.filter((item) => {
     return item.catégorie == "nourriture";
 });
 
-
-
 let filterAll = table.filter((item) => {
     return item.catégorie;
 });
 
-function createFilter (filter) {
+function createFilter(filter) {
+    console.log(filterAll.splice(12)); 
     for (let i = 0; i < filter.length; i++) {
         console.log(filter[i].values);
     }
-};
+}
 
-// createFilter(filterLangage);
+
 
 
 
@@ -100,16 +94,15 @@ function selection() {
     let optionAll = document.querySelector(".select")[3].selected;
 
     if (optionAnimaux == true) {
-        console.log("vrai animaux");
-        console.log(filterAnimaux);
+        createFilter(filterAnimaux)
+
     } else if (optionLangage == true) {
-        console.log("vrai langage");
-        console.log(filterLangage);
+        createFilter(filterLangage);
+
     } else if (optionNourriture == true) {
-        console.log("vrai nourriture");
-        console.log(filterNourriture);
+        createFilter(filterNourriture)
+        
     } else if (optionAll == true) {
-        console.log("vrai all");
-        console.log(filterAll);
+        createFilter(filterAll)
     }
 }
