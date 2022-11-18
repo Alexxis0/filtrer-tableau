@@ -51,7 +51,7 @@ let table = [
 // create element html
 function createTable(tableau) {
     for (let i = 0; i < tableau.length; i++) {
-        const nouvelleLigne = document.createElement("tr");
+        let nouvelleLigne = document.createElement("tr");
         nouvelleLigne.innerHTML = `<td>${tableau[i].values}</td>`;
         document.querySelector("table").appendChild(nouvelleLigne);
     }
@@ -81,8 +81,6 @@ function createFilter(filter) {
         console.log(filter[i].values);
     }
 }
-
-
 
 
 
