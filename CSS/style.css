@@ -2,9 +2,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -15,9 +12,12 @@ body {
   height: 100vh;
   background-color: rgb(54, 54, 54);
 }
+body select {
+  margin-top: 60px;
+}
 body table {
   border-collapse: collapse;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 body table td {
   text-align: center;

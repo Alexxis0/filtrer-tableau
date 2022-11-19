@@ -49,14 +49,16 @@ let table = [
     },
 ];
 // create element html
-function createTable(tableau) {
-    for (let i = 0; i < tableau.length; i++) {
+function createTable(filterTable) {
+    for (let i = 0; i < filterTable.length; i++) {
         let nouvelleLigne = document.createElement("tr");
-        nouvelleLigne.innerHTML = `<td>${tableau[i].values}</td>`;
+        nouvelleLigne.innerHTML = `<td>${filterTable[i].values}</td>`;
         document.querySelector("table").appendChild(nouvelleLigne);
     }
 }
-createTable(table);
+
+
+
 
 // filter
 let filterAnimaux = table.filter((item) => {
@@ -75,32 +77,29 @@ let filterAll = table.filter((item) => {
     return item.catégorie;
 });
 
-function createFilter(filter) {
-    console.log(filterAll.splice(12)); 
-    for (let i = 0; i < filter.length; i++) {
-        console.log(filter[i].values);
-    }
-}
-
-
-
 // selectionner
 function selection() {
     let optionAnimaux = document.querySelector(".select")[0].selected;
     let optionLangage = document.querySelector(".select")[1].selected;
     let optionNourriture = document.querySelector(".select")[2].selected;
     let optionAll = document.querySelector(".select")[3].selected;
-
+    
     if (optionAnimaux == true) {
-        createFilter(filterAnimaux)
-
+        createTable(filterAnimaux);
+        
+        
+        
     } else if (optionLangage == true) {
-        createFilter(filterLangage);
-
+        createTable(filterLangage);
+        
+        
+        
     } else if (optionNourriture == true) {
-        createFilter(filterNourriture)
+        createTable(filterNourriture)
+        
+        
         
     } else if (optionAll == true) {
-        createFilter(filterAll)
+        createTable(filterAll)
     }
 }
